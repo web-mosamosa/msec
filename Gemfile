@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem "pry-byebug"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,3 +68,5 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

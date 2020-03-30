@@ -1,8 +1,9 @@
 class Admin::ItemsController < ApplicationController
-  def top 
+  def top
   end
 
   def index
+    @items = Item.all
   end
 
   def show
@@ -15,8 +16,12 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
+    @item.category_id = 1
+    if @item.save
     redirect_to admin_item_path(@item)
+  else
+    render :index
+  end
   end
 
 

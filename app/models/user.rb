@@ -20,4 +20,4 @@ class User < ApplicationRecord
   validates :email, length: {minimum: 4}
 
 end
-end
+
