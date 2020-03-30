@@ -10,6 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 2020_03_30_044107) do
+
 ActiveRecord::Schema.define(version: 2020_03_28_115450) do
 
   create_table "addresses", force: :cascade do |t|
@@ -65,6 +67,14 @@ ActiveRecord::Schema.define(version: 2020_03_28_115450) do
     t.string "send_name"
     t.string "order_status"
     t.string "carriage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "residences", force: :cascade do |t|
+    t.string "postcode"
+    t.string "address"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

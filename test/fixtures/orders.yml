@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pay: MyString
+  send_address: MyString
+  send_postcade: 1
+  send_name: MyString
+  order_status: MyString
+  carriage: MyString
+
+two:
+  pay: MyString
+  send_address: MyString
+  send_postcade: 1
+  send_name: MyString
+  order_status: MyString
+  carriage: MyString
