@@ -12,6 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_03_30_044107) do
 
+ActiveRecord::Schema.define(version: 2020_03_28_115450) do
+
   create_table "addresses", force: :cascade do |t|
     t.string "postcode"
     t.string "address"
