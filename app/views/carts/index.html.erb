@@ -1,0 +1,27 @@
+<h1>Carts#index</h1>
+<p>Find me in app/views/carts/index.html.erb</p>
+ここ！<br>
+<h1>ショッピングカート</h1>
+<table class="table">
+			<thead>
+        <tr>
+            <th>表品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+            <th>#</th>
+        </tr>
+	    </thead>
+            <tbody>
+              <tr>
+                <td><%= @items.name %>
+                </td>
+                <td><%= @items.price %></td>
+                <td><%= @cart.count %>
+                    <%= f.submit '変更' %>
+                </td>
+                <td></td>
+                <td><%= link_to "削除する", cart_path(@cart.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+              </tr>
+            </tbody>
+</table>
