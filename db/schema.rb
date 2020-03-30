@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-
 ActiveRecord::Schema.define(version: 2020_03_30_044107) do
-
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email"
@@ -25,6 +21,8 @@ ActiveRecord::Schema.define(version: 2020_03_30_044107) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "count"
+    t.integer "user_id"
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -80,17 +78,15 @@ ActiveRecord::Schema.define(version: 2020_03_30_044107) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "first_name_kana"
     t.string "last_name_kana"
-    t.string "profile_image_id"
     t.string "postcode"
-    t.string "address"
+    t.string "residence"
     t.integer "phone_number"
-    t.string "user_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
