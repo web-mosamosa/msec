@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   def index
+
     @cart = Cart.new
     @carts = Cart.all
   end
@@ -28,5 +29,15 @@ class CartsController < ApplicationController
   end
 
 
-end
+
+
+  def create
+  	
+  end
+
+  def dedtroy
+  	
+  end
   
+end
+

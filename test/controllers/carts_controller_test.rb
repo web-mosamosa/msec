@@ -6,6 +6,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+
   test "should get destroy" do
     get carts_destroy_url
     assert_response :success
@@ -20,5 +21,6 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     get carts_create_url
     assert_response :success
   end
+
 
 end

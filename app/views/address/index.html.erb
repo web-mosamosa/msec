@@ -1,0 +1,24 @@
+<h2>配送先登録/一覧</h2>
+
+<%= render 'new', address: @address %>
+
+<% addresses.each do |address| %>
+<table>
+	<thead>
+		<tr>
+			<th>郵便番号</th>
+			<th>住所</th>
+			<th>宛名</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= address.postcode %></td>
+			<td><%= address.address %></td>
+			<td><%= address.name %></td>
+			<td><%= link_to '編集', edit_address_path %>
+				<%= link_to '消去', @book, method: :delete, data: { confirm: '本当に消しますか？' }%></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
