@@ -7,7 +7,11 @@ class User < ApplicationRecord
   has_many :carts,dependent: :destroy
   has_many :addresses,dependent: :destroy
   has_many :orders, dependent: :destroy
-  attachment :profile_image, destroy: false
+  
+
+
+
+  
 
 
   validates :first_name, length: {maximum: 20, minimum: 2}
@@ -20,4 +24,5 @@ class User < ApplicationRecord
   validates :email, length: {minimum: 4}
 
 end
+
 
