@@ -10,6 +10,32 @@
   </head>
 
   <body>
+     <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+
+        <nav class="nav navbar-nav navbar-left">
+          <span></span>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+           
+            <% if user_signed_in? %>
+            <li><%= link_to ' マイページ', user_path(current_user), class: '' %></li>
+            <li><%= link_to '商品一覧', items_path, class: '' %></li>
+            <li><%= link_to 'カート', cart_path, class: '' %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: '' %></li>
+            
+            <% else %>
+            <li><%= link_to 'マイページ', user_path(current_user), class: '' %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, class: '' %></li>
+            <li><%= link_to 'ログイン', new_user_session_path, class: '' %></li>
+            <% end %>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>
