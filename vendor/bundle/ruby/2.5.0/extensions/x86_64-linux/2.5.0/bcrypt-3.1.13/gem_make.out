@@ -1,15 +1,15 @@
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
-/usr/bin/ruby2.5 -r ./siteconf20200329-20019-6hke4w.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20200330-1968-fsh0wu.rb extconf.rb
 creating Makefile
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
 make "DESTDIR=" clean
-make: Warning: File 'Makefile' has modification time 1080 s in the future
+make: Warning: File 'Makefile' has modification time 0.78 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
 make "DESTDIR="
-make: Warning: File 'Makefile' has modification time 1080 s in the future
+make: Warning: File 'Makefile' has modification time 0.77 s in the future
 compiling bcrypt_ext.c
 compiling crypt_blowfish.c
 compiling crypt_gensalt.c
@@ -20,6 +20,6 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/bcrypt-3.1.13/ext/mri
 make "DESTDIR=" install
-make: Warning: File 'Makefile' has modification time 1079 s in the future
-/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20200329-20019-1vs82um
+make: Warning: File 'Makefile' has modification time 0.052 s in the future
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20200330-1968-1rwkfn6
 make: warning:  Clock skew detected.  Your build may be incomplete.

@@ -1,5 +1,5 @@
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c
-/usr/bin/ruby2.5 -r ./siteconf20200329-20019-1p6quy3.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20200330-1968-28v0h9.rb extconf.rb
 checking for ffi.h... no
 checking for ffi.h in /usr/local/include,/usr/include/ffi... no
 checking for shlwapi.h... no
@@ -11,39 +11,38 @@ creating Makefile
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c
 make "DESTDIR=" clean
-make: Warning: File 'libffi.gnu.mk' has modification time 1076 s in the future
+make: Warning: File 'Makefile' has modification time 0.88 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c
 make "DESTDIR="
-make: Warning: File 'libffi.gnu.mk' has modification time 1076 s in the future
+make: Warning: File 'Makefile' has modification time 0.86 s in the future
 Configuring libffi
 make -C "/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu"
 make[1]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[1]: Warning: File 'Makefile' has modification time 1080 s in the future
+make[1]: Warning: File 'Makefile' has modification time 0.033 s in the future
 make  all-recursive
 make[2]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[2]: Warning: File 'Makefile' has modification time 1080 s in the future
+make[2]: Warning: File 'Makefile' has modification time 0.024 s in the future
 Making all in include
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/include'
-make[3]: Warning: File 'Makefile' has modification time 1080 s in the future
+make[3]: Warning: File 'Makefile' has modification time 0.014 s in the future
 make[3]: Nothing to be done for 'all'.
 make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/include'
 Making all in testsuite
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/testsuite'
-make[3]: Warning: File 'Makefile' has modification time 1080 s in the future
+make[3]: Warning: File 'Makefile' has modification time 0.007 s in the future
 make[3]: Nothing to be done for 'all'.
 make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/testsuite'
 Making all in man
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/man'
-make[3]: Warning: File 'Makefile' has modification time 1080 s in the future
+make[3]: Warning: File 'Makefile' has modification time 0.0028 s in the future
 make[3]: Nothing to be done for 'all'.
 make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/man'
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[3]: Warning: File 'Makefile' has modification time 1080 s in the future
 /bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi  -I. -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/include -Iinclude -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/src   -Wall -fexceptions -c -o src/prep_cif.lo /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/src/prep_cif.c
 libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi -I. -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/include -Iinclude -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/src -Wall -fexceptions -c /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/src/prep_cif.c  -fPIC -DPIC -o src/.libs/prep_cif.o
 /bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi  -I. -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/include -Iinclude -I/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/src   -Wall -fexceptions -c -o src/types.lo /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi/src/types.c
@@ -101,7 +100,6 @@ libtool: link: gcc -shared  -fPIC -DPIC  src/.libs/prep_cif.o src/.libs/types.o 
 libtool: link: (cd ".libs" && rm -f "libffi.so.7" && ln -s "libffi.so.7.1.0" "libffi.so.7")
 libtool: link: (cd ".libs" && rm -f "libffi.so" && ln -s "libffi.so.7.1.0" "libffi.so")
 libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
-make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
 make[2]: warning:  Clock skew detected.  Your build may be incomplete.
 make[2]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
@@ -143,39 +141,27 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c
 make "DESTDIR=" install
-make: Warning: File 'libffi.gnu.mk' has modification time 1052 s in the future
+make: Warning: File 'ffi_c.so' has modification time 0.9 s in the future
 make -C "/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu"
 make[1]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[1]: Warning: File 'Makefile' has modification time 1066 s in the future
 make  all-recursive
 make[2]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[2]: Warning: File 'Makefile' has modification time 1066 s in the future
 Making all in include
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/include'
-make[3]: Warning: File 'Makefile' has modification time 1066 s in the future
 make[3]: Nothing to be done for 'all'.
-make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/include'
 Making all in testsuite
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/testsuite'
-make[3]: Warning: File 'Makefile' has modification time 1066 s in the future
 make[3]: Nothing to be done for 'all'.
-make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/testsuite'
 Making all in man
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/man'
-make[3]: Warning: File 'Makefile' has modification time 1066 s in the future
 make[3]: Nothing to be done for 'all'.
-make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu/man'
 make[3]: Entering directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[3]: Warning: File 'Makefile' has modification time 1066 s in the future
 make[3]: Nothing to be done for 'all-am'.
-make[3]: warning:  Clock skew detected.  Your build may be incomplete.
 make[3]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[2]: warning:  Clock skew detected.  Your build may be incomplete.
 make[2]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
-make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/vagrant/msec/vendor/bundle/ruby/2.5.0/gems/ffi-1.12.2/ext/ffi_c/libffi-x86_64-linux-gnu'
 compiling AbstractMemory.c
 compiling ArrayType.c
@@ -209,5 +195,5 @@ compiling Types.c
 compiling Variadic.c
 compiling ffi.c
 linking shared-object ffi_c.so
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20200329-20019-2s2tvw
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20200330-1968-r4opf5
 make: warning:  Clock skew detected.  Your build may be incomplete.

@@ -1,5 +1,5 @@
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/sqlite3-1.4.2/ext/sqlite3
-/usr/bin/ruby2.5 -r ./siteconf20200329-20019-38yb7q.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20200330-1968-1nqt5tc.rb extconf.rb
 checking for sqlite3.h... yes
 checking for pthread_create() in -lpthread... yes
 checking for -ldl... yes
@@ -19,12 +19,12 @@ creating Makefile
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR=" clean
-make: Warning: File 'Makefile' has modification time 1081 s in the future
+make: Warning: File 'Makefile' has modification time 0.49 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR="
-make: Warning: File 'Makefile' has modification time 1081 s in the future
+make: Warning: File 'Makefile' has modification time 0.48 s in the future
 compiling aggregator.c
 compiling backup.c
 compiling database.c
@@ -69,6 +69,6 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/sqlite3-1.4.2/ext/sqlite3
 make "DESTDIR=" install
-make: Warning: File 'Makefile' has modification time 1079 s in the future
-/usr/bin/install -c -m 0755 sqlite3_native.so ./.gem.20200329-20019-199pcmm/sqlite3
+make: Warning: File 'sqlite3_native.so' has modification time 0.3 s in the future
+/usr/bin/install -c -m 0755 sqlite3_native.so ./.gem.20200330-1968-1k58bpa/sqlite3
 make: warning:  Clock skew detected.  Your build may be incomplete.

@@ -1,17 +1,17 @@
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/puma-3.12.4/ext/puma_http11
-/usr/bin/ruby2.5 -r ./siteconf20200329-20019-anvshc.rb extconf.rb
+/usr/bin/ruby2.5 -r ./siteconf20200330-1968-t4x3o0.rb extconf.rb
 checking for BIO_read() in -lcrypto... no
 checking for BIO_read() in -llibeay32... no
 creating Makefile
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/puma-3.12.4/ext/puma_http11
 make "DESTDIR=" clean
-make: Warning: File 'Makefile' has modification time 1080 s in the future
+make: Warning: File 'Makefile' has modification time 0.45 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/puma-3.12.4/ext/puma_http11
 make "DESTDIR="
-make: Warning: File 'Makefile' has modification time 1080 s in the future
+make: Warning: File 'Makefile' has modification time 0.44 s in the future
 compiling http11_parser.c
 compiling io_buffer.c
 compiling mini_ssl.c
@@ -21,6 +21,6 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/puma-3.12.4/ext/puma_http11
 make "DESTDIR=" install
-make: Warning: File 'Makefile' has modification time 1079 s in the future
-/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20200329-20019-f2hstt/puma
+make: Warning: File 'puma_http11.so' has modification time 0.77 s in the future
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20200330-1968-1yq2329/puma
 make: warning:  Clock skew detected.  Your build may be incomplete.

@@ -1,5 +1,5 @@
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.9/ext/nokogiri
-/usr/bin/ruby2.5 -r ./siteconf20200328-19528-1gb60x8.rb extconf.rb --use-system-libraries
+/usr/bin/ruby2.5 -r ./siteconf20200330-1968-13d8gea.rb extconf.rb --use-system-libraries
 checking if the C compiler accepts ... yes
 Building nokogiri using system libraries.
 checking for xmlParseDoc() in libxml/parser.h... yes
@@ -16,12 +16,12 @@ creating Makefile
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.9/ext/nokogiri
 make "DESTDIR=" clean
-make: Warning: File 'Makefile' has modification time 1081 s in the future
+make: Warning: File 'Makefile' has modification time 0.41 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.9/ext/nokogiri
 make "DESTDIR="
-make: Warning: File 'Makefile' has modification time 1081 s in the future
+make: Warning: File 'Makefile' has modification time 0.4 s in the future
 compiling html_document.c
 compiling html_element_description.c
 compiling html_entity_lookup.c
@@ -115,6 +115,6 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/msec/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.9/ext/nokogiri
 make "DESTDIR=" install
-make: Warning: File 'Makefile' has modification time 927 s in the future
-/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20200328-19528-uk6h32/nokogiri
+make: Warning: File 'nokogiri.so' has modification time 0.2 s in the future
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20200330-1968-d6k09k/nokogiri
 make: warning:  Clock skew detected.  Your build may be incomplete.
