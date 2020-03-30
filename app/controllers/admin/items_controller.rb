@@ -1,5 +1,5 @@
 class Admin::ItemsController < ApplicationController
-  def top
+  def top 
   end
 
   def index
