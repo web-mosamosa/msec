@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :residences
 
   namespace  :admin do
+   resources :users
    resources :items
    get '/top' => 'items#top'
   end
