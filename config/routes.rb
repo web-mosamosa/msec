@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'homes/thanks'
+  get 'homes/about'
     devise_for :admins, skip: :all
   devise_scope :admin do
     get 'admins/sign_in' => 'admins/sessions#new', as: 'new_admin_session'
@@ -11,7 +13,13 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resources :users, only: [:edit,:show,:update,:destroy]
+  resources :users, only: [:edit,:show,:update,:destroy] do
+    resources :orders, only: [:new,:create]
+    resources :order_items, only: [:index,:show]
+    resources :residences
+  end
+
+
 
   
   resources :carts, only: [:index,:show]
@@ -19,7 +27,7 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :residences
+
 
   namespace  :admin do
    resources :users
