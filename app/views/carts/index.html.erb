@@ -11,17 +11,20 @@
             <th>#</th>
         </tr>
 	    </thead>
-            <tbody>
-              <tr>
-                <td><%= @items.name %>
-                </td>
-                <td><%= @items.price %></td>
-                <td><%= @cart.count %>
-                    <%= f.submit '変更' %>
-                </td>
-                <td></td>
-                <td><%= link_to "削除する", cart_path(@cart.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
-              </tr>
-            </tbody>
+                  <tbody>
+                    <% @item.each do |item| %>
+                      <tr>
+                        <td><%= @items.name %></td>
+                     
+                        <td><%= @item.price %></td>
+                        <td><%= @cart.count %>
+                        
+                            <%= f.submit '変更' %>
+                        </td>
+                        <td></td>
+                        <td><%= link_to "削除する", cart_path(@cart.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
 </table>
 
