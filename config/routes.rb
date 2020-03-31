@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
+  root to: 'users#index'
   
-  resources :categories
   devise_for :users
 
+  resources :users
+  
   resources :carts
-
+  
+  resources :categories
 
   resources :residences
-
-
-  
+ 
   namespace  :admin do
    resources :items
    get '/top' => 'items#top'
@@ -17,6 +18,6 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :users
+  
 
 end
