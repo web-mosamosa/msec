@@ -2,12 +2,11 @@ class CategoriesController < ApplicationController
   def index
   	@category = Category.all
   	@new_categories = Category.new
-  	#@categories = Category.find(params[:id])
+  	
   end
 
   def edit
-  	@categories = Category.new
-  	#@category = Category.find(params[:id])
+  	@categories = Category.find(params[:id])
   end
   def create
   	@categories = Category.all
@@ -22,7 +21,7 @@ class CategoriesController < ApplicationController
   	@category = Category.find(params[:id])
         @category.update(category_params)
         if @category.save
-          redirect_to edit_category_path(@category.id)
+          redirect_to categories_path(@category.id)
            else
           render :edit
         end

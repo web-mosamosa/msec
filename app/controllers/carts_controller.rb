@@ -3,6 +3,7 @@ class CartsController < ApplicationController
 
     @cart = Cart.new
     @carts = Cart.all
+    @items = Item.all
   end
   def destroy
     @cart = Cart.find(params[:id]) #データ(レコード)を1件取得
@@ -38,6 +39,11 @@ class CartsController < ApplicationController
   def dedtroy
   	
   end
+  private
+   
+    def cart_params
+        params.require(:cart).permit(:count, :item_id, :user_id,)
+    end
   
 end
 

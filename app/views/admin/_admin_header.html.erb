@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container"> <!-- ここを追加 --> 
+        <div class="row">   <!-- ここを追加 -->
+      <!--ヘッダーの記述-->
+          <header>
+                  <div class="col-12 clearfix">
+                  <div class="float-right">
+                      <table>
+                        <thead>
+                          <tr>
+                                  <th><%= link_to "商品一覧", admin_items_path %></th>
+                                  <th><%= link_to "会員一覧", users_path %></th>
+                                  
+                                  <th><%= link_to "ジャンル管理", categories_path %></th>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div> 
+                  </div>
+          </header>
+        </div>  <!-- ここを追加 -->
+        <div class="col-lg-4"> 
+                    <h1>もさもさ</h1>
+                </div>
+    </div>      <!-- ここを追加 -->
+  </body>
+</html>
