@@ -9,13 +9,13 @@
     <td>名前</td>
     <td>
     <div class="field">
-      <%= f.label :last_name %>
+      <%= f.label :last_name, "(姓)" %>
       <%= f.text_field :last_name, class: "name" %>
     </div>
     </td>
     <td>
     <div class="field">
-      <%= f.label :first_name, "名" %>
+      <%= f.label :first_name, "(名)" %>
       <%= f.text_field :first_name, class: "name" %>
     </div>
     </td>
@@ -24,13 +24,13 @@
     <td>フリガナ</td>
     <td>
     <div class="field">
-      <%= f.label :last_name_kana %>
+      <%= f.label :last_name_kana,"セイ" %>
       <%= f.text_field :last_name_kana, class: "name" %>
     </div>
     </td>
     <td>
     <div class="field">
-      <%= f.label :first_name_kana %>
+      <%= f.label :first_name_kana,"メイ" %>
       <%= f.text_field :first_name_kana, class: "name" %>
     </div>
     </td>
@@ -39,7 +39,7 @@
     <td>メールアドレス</td>
     <td>
     <div class="field">
-      <%= f.label :email %>
+      <%= f.label :email,"" %>
       <%= f.text_field :email, class: "email" %>
     </div>
     </td>
@@ -48,7 +48,7 @@
     <td>郵便番号（ハイフンなし）</td>
     <td>
     <div class="field">
-      <%= f.label :postcode %>
+      <%= f.label :postcode,"" %>
       <%= f.text_field :postcode, class: "postcode" %>
     </div>
     </td>
@@ -57,7 +57,7 @@
     <td>住所</td>
     <td>
     <div class="field">
-      <%= f.label :address %>
+      <%= f.label :address,"" %>
       <%= f.text_field :address, class: "address" %>
     </div>
     </td>
@@ -66,20 +66,16 @@
     <td>電話番号（ハイフンなし）</td>
     <td>
     <div class="field">
-      <%= f.label :phone_number %>
+      <%= f.label :phone_number,"" %>
       <%= f.text_field :phone_number, class: "phone_number" %>
     </div>
     </td>
    </tr>
    <tr>
-    <td>パスワード
-    <%= f.label :password %> 
-    <% if @minimum_password_length %>
-    (<%= @minimum_password_length %> 文字以上)
-    <% end %>
-    </td>
+    <td>パスワード</td>
     <td>
     <div class="field">
+      <%= f.label :password,"" %>
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
     </td>
@@ -88,7 +84,7 @@
     <td>パスワード（確認用）</td>
     <td>
     <div class="field">
-      <%= f.label :password_confirmation %>
+      <%= f.label :password_confirmation,"" %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
     </td>
