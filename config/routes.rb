@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+
+  resources :users, only: [:edit,:show,:update,:destroy]
+
   
   resources :carts, only: [:index,:show]
   
-
-  resources :users, only: [:edit,:show,:create,:update,:destroy]
 
   resources :categories
 
