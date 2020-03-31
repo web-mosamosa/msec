@@ -1,0 +1,5 @@
+	<p><%= attachment_image_tag @item, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
+　　 <p><%= @item.name %></p>
+    <p><%= @item.text %></p>
+    <p>¥<%= @item.price %>(税込)</p>
+    <%= link_to 'カートに入れる', carts_path, class: "btn btn-primary" %>
