@@ -1,0 +1,36 @@
+<h1>会員編集画面</h1>
+<%= form_for(:admin,@user) do |f| %>
+ <p>会員ID    <%= @user.id %></p>
+  <div class="field row">
+    <%= f.label :氏名 %>
+    <%= f.text_field :last_name %><%= f.text_field :first_name %>
+  </div>
+    <div class="field row">
+    <%= f.label :フリガナ %>
+    <%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %>
+  </div>
+
+
+  <div class="field row">
+    <%= f.label :郵便番号 %>
+    <%= f.text_field :postcode%>
+  </div>
+    <div class="field row">
+    <%= f.label :住所 %>
+    <%= f.text_field :address %>
+  </div>
+   <div class="field row">
+    <%= f.label :電話番号 %>
+    <%= f.text_field :phone_number %>
+  </div>
+    <div class="field row">
+    <%= f.label :メールアドレス %>
+    <%= f.text_field :email %>
+  </div>
+    <input type="radio" name="user_status" value="有効">有効
+    <input type="radio" name="user_status" value="無効">無効
+
+  <div class="actions row">
+    <%= f.submit %>
+  </div>
+<% end %>
