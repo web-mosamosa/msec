@@ -9,6 +9,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+protected
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+
+  def after_sign_up_path_for(resource)
+    root_path
+  end 
+
+  #sign_out後のredirect先変更する。rootパスへ。rootパスはhome topを設定済み。
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   protected
