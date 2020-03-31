@@ -4,39 +4,39 @@
 
 	<h2>マイページ</h2>
 
-  <h3>登録情報</h3> 
+  <h3>登録情報</h3>
   <p><%= link_to "編集する", edit_user_path(@user), class: "btn btn-block btn-default glyphicon" %></p>
 	<table class="table table-hover table-inverse">
 		<tbody>
 			<tr>
 				<td>氏名</td>
 				<td>
-				<%= current_user.last_name %>
-				<%= current_user.first_name %>
+				<%= @user.last_name %>
+				<%= @user.first_name %>
 				</td>
 			</tr>
       <tr>
       	<td>カナ</td>
       	<td>
-				<%= current_user.last_name_kana %>
-				<%= current_user.first_name_kana %>
+				<%= @user.last_name_kana %>
+				<%= @user.first_name_kana %>
 				</td>
       </tr>
       <tr>
       	<td>郵便番号</td>
-      	<td><%= current_user.postcode %></td>
+      	<td><%= @user.postcode %></td>
       </tr>
       <tr>
       	<td>住所</td>
-      	<td><%= current_user.address %></td>
+      	<td><%= @user.address %></td>
       </tr>
       <tr>
       	<td>電話番号</td>
-      	<td><%= current_user.phone_number %></td>
+      	<td><%= @user.phone_number %></td>
       </tr>
       <tr>
       	<td>メールアドレス</td>
-      	<td><%= current_user.email %></td>
+      	<td><%= @user.email %></td>
       </tr>
 		</tbody>
 	</table>
