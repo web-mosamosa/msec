@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = @cart.id
     end
   end
+  def after_sign_in_path_for(resource)
+  case resource
+  when User
+    user_path(resource)
+  when Admin
+    admin_top_path
+  end
+end
 
 
   before_action :configure_permitted_parameters, if: :devise_controller?
