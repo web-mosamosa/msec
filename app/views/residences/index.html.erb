@@ -1,6 +1,8 @@
 <%= render 'users/ura_header' %>
 <h2>配送先登録/一覧</h2>
-
+<% @residence.errors.full_messages.each do |message| %>
+<%= message %>
+<% end %>
 <%= render 'new', residence: @residence %>
 
 <% @residences.each do |residence| %>

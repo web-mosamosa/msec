@@ -20,8 +20,10 @@ Rails.application.routes.draw do
   resources :users, only: [:edit,:show,:update,:destroy]
 
   resources :orders
+
   　get "orders/confirm" => "orders#confirm"
 　　get 'homes/thanks'
+
   resources :residences
   resources :carts, only: [:index,:show]
 
