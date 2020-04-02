@@ -1,6 +1,6 @@
 class Residence < ApplicationRecord
 	validates :postcode, presence: true
-	validates :residence, presence: true
+	validates :address, presence: true
 	validates :name, presence: true
-	belong_to :user
+	belongs_to :user
 end

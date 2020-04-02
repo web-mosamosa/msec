@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
   resources :carts
 
-  resources :categories
-
   resources :residences
 
   namespace  :admin do

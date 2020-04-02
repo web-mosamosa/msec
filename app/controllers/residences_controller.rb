@@ -1,12 +1,5 @@
 class ResidencesController < ApplicationController
-  def new
-  	residence = Residence.new
-  	if residence.save
-  		redirect_to residences_path
-  	else
-  		render 'index'
-  	end
-  end
+
 
   def index
   	@residence = Residence.new
@@ -19,6 +12,7 @@ class ResidencesController < ApplicationController
 
   def create
   	@residence = Residence.new(residence_params)
+    @residence.user_id = current_user.id
   	if @residence.save
   		redirect_to residences_path
   	else
