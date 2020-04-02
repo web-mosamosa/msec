@@ -1,29 +1,38 @@
-<!DOCTYPE html>
-<html>
+
+
+   <nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample3">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<h1>もさもさ＠</h1>
+			</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="navbarEexample3">
+			<ul class="nav navbar-nav navbar-left">
+
+				<li><a href="#"><%= link_to "商品一覧", admin_items_path %></a></li>
+
+				<li class="active"><a href="#"><%= link_to "会員一覧", admin_users_path %></a></li>
+
+				<li><a href="#"><%= link_to "ジャンル管理", categories_path %></a></li>
+			</ul>
+
+			<form class="navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="検索キーワード">
+				</div>
+				<button type="submit" class="btn btn-default">検索</button>
+			</form>
+		</div>
+	</div>
+</nav>
+
+ 
   <body>
-    <div class="container"> <!-- ここを追加 --> 
-        <div class="row">   <!-- ここを追加 -->
-      <!--ヘッダーの記述-->
-          <header>
-                  <div class="col-12 clearfix">
-                  <div class="float-right">
-                      <table>
-                        <thead>
-                          <tr>
-                                  <th><%= link_to "商品一覧", admin_items_path %></th>
-                                  <th><%= link_to "会員一覧", users_path %></th>
-                                  
-                                  <th><%= link_to "ジャンル管理", categories_path %></th>
-                          </tr>
-                        </tbody>
-                      </table>
-                  </div> 
-                  </div>
-          </header>
-        </div>  <!-- ここを追加 -->
-        <div class="col-lg-4"> 
-                    <h1>もさもさ</h1>
-                </div>
-    </div>      <!-- ここを追加 -->
-  </body>
-</html>

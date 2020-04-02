@@ -1,0 +1,32 @@
+
+<%= render 'users/ura_header' %>
+<h2>商品一覧（全<%= @items.count %>件）</h2>
+<table class="table table-hover table-inverse">
+
+            <tbody>
+
+				<% @categories.each do |category| %>
+				<%if category.status == '有効'%>
+					<td><%= link_to category.name, items_path%></td>
+				<% end %>
+
+				<% end %>
+			</tbody>
+</table>
+
+<table class="table table-hover table-inverse">
+
+            <tbody>
+				<% @items.each do |item| %>
+				<tr>
+					<td><%= attachment_image_tag @item, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></td>
+				</tr>
+				<tr>
+					<td><%= item.name %></td>
+				</tr>
+				<tr>
+					<td>¥<%= item.price %></td>
+				</tr>
+				<% end %>
+			</tbody>
+</table>
