@@ -13,19 +13,17 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resources :users, only: [:edit,:show,:update,:destroy] do
-    resources :orders, only: [:new,:create]
-    resources :order_items, only: [:index,:show]
-    resources :residences
-  end
+  resources :users, only: [:edit,:show,:update,:destroy]
 
+  resources :orders
+  get "orders/confirm" => "orders#confirm"
+
+
+  resources :residences
 
 
   
   resources :carts, only: [:index,:show]
-  
-
-  resources :categories
 
 
 
