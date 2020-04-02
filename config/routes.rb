@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :orders
   get "orders/confirm" => "orders#confirm"
 
-
   resources :residences
 
 

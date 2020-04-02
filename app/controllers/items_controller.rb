@@ -20,6 +20,7 @@ end
 
   def show
     @item = Item.find(params[:id])
+    @item_price = @item.price*1.1
   end
 
 private
