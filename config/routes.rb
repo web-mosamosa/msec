@@ -27,10 +27,11 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:edit,:show,:update,:destroy]
-
-  resources :orders, only: [:new, :index, :show, :create]
-  get "homes/confirm" => "orders#confirm"
+  
+  get "orders/confirm" => "orders#confirm"
   get 'homes/thanks'
+  resources :orders, only: [:new, :index, :show, :create]
+  
 
   resources :residences
   resources :carts, only: [:index,:show]
