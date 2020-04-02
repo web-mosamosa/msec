@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_055555) do
     t.integer "user_id"
     t.string "pay"
     t.string "address"
-    t.integer "postcade"
+    t.integer "postcode"
     t.string "order_name"
     t.string "order_status"
     t.string "carriage"

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :categories
 
 
-  devise_for :users 
+  devise_for :users
 
   resources :users, only: [:edit,:show,:create,:update,:destroy]
   get 'users/:id/residences' => 'users#residence', as: 'user_residence'
@@ -27,8 +27,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit,:show,:update,:destroy]
 
-  resources :orders
-  get "orders/confirm" => "orders#confirm"
+  resources :orders, only: [:new, :index, :show, :create]
+  get "homes/confirm" => "orders#confirm"
   get 'homes/thanks'
 
   resources :residences
