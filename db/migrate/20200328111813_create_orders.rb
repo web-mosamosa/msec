@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :pay
       t.string :address
-      t.integer :postcade
+      t.integer :postcode
       t.string :order_name
       t.string :order_status
       t.string :carriage

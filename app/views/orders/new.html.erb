@@ -1,6 +1,6 @@
 <h2>注文情報入力</h2>
 <h2>支払い方法</h2>
-<%= form_with model: @order,local: true,url:orders_confirm_path, method: :get do |f| %>
+<%= form_with model: @order, local: true, :url => { :controller => :orders, :action => :confirm }, method: :get do |f| %>
     <label>
     <%= f.radio_button :pay, 'クレジットカード' %>クレジットカード
     </label>
@@ -21,7 +21,7 @@
     <%= radio_button_tag "address_select", "2" %>登録済住所から選択
     </label>
     <label>
-    	
+    	<%= f.collection_select :residence_id, Residence.where(user_id:current_user.id),:id,:postcode_and_address_and_name %>
     </label><br>
 
     <label>
