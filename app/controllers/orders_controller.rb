@@ -22,9 +22,9 @@ class OrdersController < ApplicationController
         elsif params[:address_select] == "2"
             @address = Residence.find(params[:order][:address_id])
             @order = Order.new
-            @order.postcode = @address.postcode
-            @order.address = @address.address
-            @order.order_name = @address.name
+            @order.postcode = @residence.postcode
+            @order.address = @residence.address
+            @order.order_name = @residence.name
             @order.pay = params[:order][:pay].to_i
         else
             postcode = params[:order][:postcode]
