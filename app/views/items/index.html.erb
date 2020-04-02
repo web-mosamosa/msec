@@ -7,7 +7,7 @@
 
 				<% @categories.each do |category| %>
 				<%if category.status == '有効'%>
-					<td><%= link_to category.name, items_path%></td>
+					<td><%= link_to category.name, category_path(category)%></td>
 				<% end %>
 
 				<% end %>
