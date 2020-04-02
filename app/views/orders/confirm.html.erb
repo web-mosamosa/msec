@@ -1,0 +1,12 @@
+<h2>注文情報確認</h2>
+<%= form_for(@order,url:orders_path,method: :post) do |f| %>
+<h3>支払方法</h3>
+<%= f.hidden_field :pay, :value => @order.pay %>
+<%= @order.pay %>
+<h3>お届け先</h3>
+郵便番号: <%= f.hidden_field :postcode, :value => @order.postcode %><%= @order.postcode %><br>
+住所: <%= f.hidden_field :address, :value => @order.address %><%= @order.address %><br>
+宛名:<%= f.hidden_field :order_name, :value => @order.order_name %><%= @order.order_name %><br>
+
+<%= f.submit "購入を確定する" %><br>
+<% end %>
