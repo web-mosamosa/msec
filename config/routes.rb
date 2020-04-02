@@ -7,8 +7,16 @@ Rails.application.routes.draw do
   end
   get 'homes/about'
   resources :categories
-  devise_for :users
 
+
+  devise_for :users 
+
+  resources :users, only: [:edit,:show,:create,:update,:destroy]
+  get 'users/:id/residences' => 'users#residence', as: 'user_residence'
+  post 'users/:id/residences' => 'residences#create'
+  resources :carts
+
+ 
   namespace  :admin do
    resources :users
    resources :items
