@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   devise_scope :admin do
     get 'admins/sign_in' => 'admins/sessions#new', as: 'new_admin_session'
     post 'admins/sign_in' => 'admins/sessions#create', as: 'admin_session'
-    delete 'admins/sign_out' => 'admins/sessions#destroy', as: 'destroy_admin_session'    
+    delete 'admins/sign_out' => 'admins/sessions#destroy', as: 'destroy_admin_session'
   end
-　　get 'homes/about'
-　resources :categories
-　devise_for :users
+  get 'homes/about'
+  resources :categories
+  devise_for :users
 
-　namespace  :admin do
+  namespace  :admin do
    resources :users
    resources :items
    get '/top' => 'items#top'
@@ -20,9 +20,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit,:show,:update,:destroy]
 
   resources :orders
-
-  　get "orders/confirm" => "orders#confirm"
-　　get 'homes/thanks'
+  get "orders/confirm" => "orders#confirm"
+  get 'homes/thanks'
 
   resources :residences
   resources :carts, only: [:index,:show]
