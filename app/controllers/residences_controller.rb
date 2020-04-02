@@ -1,30 +1,25 @@
 class ResidencesController < ApplicationController
 
 
-  def index
-  	@residence = Residence.new
-  	@residences = Residence.all
-  end
-
   def edit
   	@residence = Residence.find(params[:id])
   end
 
   def create
   	@residence = Residence.new(residence_params)
-    @residence.user_id = current_user.id
+     @residence.user_id = current_user.id
   	if @residence.save
-  		redirect_to residences_path
+  		redirect_to user_residence_path(current_user)
   	else
   		@residences = Residence.all
-  		render 'index'
+  		user_residence_path(current_user)
   	end
   end
 
   def update
   	residence = Residence.find(params[:id])
   	if residence.update(residence_params)
-  		redirect_to residences_path
+  		redirect_to r_path
   	else
   		render 'edit'
   	end

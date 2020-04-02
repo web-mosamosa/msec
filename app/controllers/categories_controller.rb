@@ -4,6 +4,11 @@ class CategoriesController < ApplicationController
   	@new_categories = Category.new
   	
   end
+  def show
+    @categories = Category.all
+    @category =Category.find(params[:id])
+    @items = @category.items
+  end
 
   def edit
   	@categories = Category.find(params[:id])
