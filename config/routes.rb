@@ -14,15 +14,15 @@ Rails.application.routes.draw do
   resources :users, only: [:edit,:show,:create,:update,:destroy]
   get 'users/:id/residences' => 'users#residence', as: 'user_residence'
   post 'users/:id/residences' => 'residences#create'
-  resources :carts
 
- 
   namespace  :admin do
    resources :users
    resources :items
    resources :categories
    get '/top' => 'items#top'
   end
+
+  resources :carts, only: [:index, :create, :update, :destroy]
 
 
 
@@ -34,13 +34,9 @@ Rails.application.routes.draw do
   
 
   resources :residences
-  resources :carts, only: [:index,:show]
 
   resources :items, only: [:index,:show]
   root to: 'items#top'
-  post '/add_item' => 'carts#add_item'
-  post '/update_item' => 'carts#update_item'
-  delete '/delete_item' => 'carts#delete_item'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

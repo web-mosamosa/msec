@@ -1,15 +1,20 @@
 class CartsController < ApplicationController
   def index
 
-    @cart = Cart.new
-    @carts = Cart.all
-    @items = Item.all
-   
+    @cart = Cart.where(user_id: current_user.id)
   end
+
+  def create
+    cart = Cart.new(cart_params)
+    cart.user_id = current_user.id
+    cart.save
+      redirect_to carts_path
+  end
+
   def destroy
     @cart = Cart.find(params[:id]) #データ(レコード)を1件取得
-    cart.destroy 
-    redirect_to cart_path 
+    cart.destroy
+    redirect_to cart_path
   end
 
   def update
@@ -22,15 +27,9 @@ class CartsController < ApplicationController
       end
   end
 
-  def create
-    @cart = Cart.new(cart_params)
-    @cart.user_id = current_user.id
-    @cart.save
-    redirect_to carts_path(@cart)
-  end
   
-  def show
 
+  def destroy_all
   end
   
  

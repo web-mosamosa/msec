@@ -19,8 +19,8 @@ end
   end
 
   def show
-      @item = Item.find(params[:id])
-      @cart = Cart.new  
+    @item = Item.find(params[:id])
+    @cart = Cart.new
   end
 
 private
