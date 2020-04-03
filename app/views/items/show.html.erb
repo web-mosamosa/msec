@@ -1,10 +1,11 @@
 <%= render 'users/ura_header' %>
 
+
     <p><%= attachment_image_tag @item, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
     <p><%= @item.name %></p>
-
     <p><%= @item.text %></p>
     <p>¥<%= @item.price %>(税込)</p>
+
 
     <%= form_for(@cart, url:carts_path) do |f| %>
   	    <%= f.select :count,(1..10) %>

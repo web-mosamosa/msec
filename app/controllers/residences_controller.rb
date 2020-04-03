@@ -19,7 +19,7 @@ class ResidencesController < ApplicationController
   def update
   	residence = Residence.find(params[:id])
   	if residence.update(residence_params)
-  		redirect_to r_path
+  		redirect_to user_residence_path(current_user)
   	else
   		render 'edit'
   	end
