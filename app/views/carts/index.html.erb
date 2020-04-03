@@ -1,8 +1,7 @@
-
-ここ@@@@@@！<br>
+ここ！<br>
 <h1>ショッピングカート</h1>
 <table class="table">
-			<thead>
+      <thead>
         <tr>
             <th>表品名</th>
             <th>単価（税込）</th>
@@ -10,21 +9,22 @@
             <th>小計</th>
             <th>#</th>
         </tr>
-	    </thead>
-                  <tbody>
-                    <% @item.each do |item| %>
-                      <tr>
-                        <td><%= @items.name %></td>
-                     
-                        <td><%= @item.price %></td>
-                        <td><%= @cart.count %>
-                        
-                            <%= f.submit '変更' %>
-                        </td>
-                        <td></td>
-                        <td><%= link_to "削除する", cart_path(@cart.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
-                      </tr>
-                    <% end %>
-                  </tbody>
+      </thead>
+      <tbody>
+        <% @carts.each do |f| %>
+        <tr>
+          <td><%= f.name %></td>
+          <td>
+          <%= form_for(@cart, url: {controller: "carts", action: "update_item"}) do |f| %>
+          
+          <%= f.select :count, [@cart.count.to_i] %>
+          </td>
+
+          <td><%= f.submit '変更' %></td>
+          <% end %>
+          <td><%= link_to "削除する", cart_path(@cart_id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+        </tr>
+      </tbody>
+      <% end %>
 </table>
 
