@@ -13,6 +13,11 @@ class User < ApplicationRecord
     退会済み: "ura_withdraw",
   }
 
+  #def active_for_authentication?  
+   # super && !deleted_at
+  #end  
+
+
   
 end
 
