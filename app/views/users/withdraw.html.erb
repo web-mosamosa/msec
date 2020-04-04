@@ -17,9 +17,9 @@
     </label>
   </p>
   <%= form_for(@user) do |f| %>
-       
 
-				<%= f.submit "退会する",class: "btn btn-info" %>
+        <%= f.hidden_field :user_status, value: "ura_withdraw" %>
+				<%= f.submit '退会する' %>
   <% end %>
-   <%= hidden_field_tag :user_status, 1 %>
+  
 </div>
