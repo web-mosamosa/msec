@@ -27,19 +27,13 @@ class CartsController < ApplicationController
       end
   end
 
-  
-
   def destroy_all
   end
-  
- 
-  
-  
+
   private
-   
+
   def cart_params
     params.require(:cart).permit(:count, :item_id)
   end
-    
-    
+
 end
