@@ -13,31 +13,24 @@ class OrdersController < ApplicationController
 
 
     def confirm
-        @cart = Cart.where(user_id: current_user.id)
+        @cart = current_user.carts
+        @order = Order.new(order_params)
+        @order.pay = params[:order][:pay]
+        @total_amount = params[:order][:total_amount]
     	if params[:select] == "1"
-            @order = Order.new
             @order.postcode = current_user.postcode
             @order.address = current_user.address
             @order.order_name = current_user.last_name
-            @order.pay = params[:order][:pay].to_i
 
         elsif params[:select] == "2"
             @residence = Residence.find(params[:order][:residence_id])
-            @order = Order.new
             @order.postcode = @residence.postcode
             @order.address = @residence.address
             @order.order_name = @residence.name
-            @order.pay = params[:order][:pay].to_i
         else
             postcode = params[:order][:postcode]
             address = params[:order][:address]
             order_name = params[:order][:order_name]
-            #@order.pay = params[:order][:pay].to_i ここだけエラーする
-            if  postcode == "" || address == "" || order_name == ""
-            redirect_to new_order_path
-            else
-            @order = Order.new(order_params)
-            end
         end
     end
 
