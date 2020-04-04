@@ -34,7 +34,6 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:edit,:show,:update,:destroy]
-  
   get "orders/confirm" => "orders#confirm"
   get 'homes/thanks'
   resources :orders, only: [:new, :index, :show, :create]
@@ -46,6 +45,6 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index,:show]
   root to: 'items#top'
-
+mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
