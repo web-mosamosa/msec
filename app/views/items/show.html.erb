@@ -1,12 +1,14 @@
 <%= render 'users/ura_header' %>
-	
-    <%= form_for(@item) do |f| %>
+
 
     <p><%= attachment_image_tag @item, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
     <p><%= @item.name %></p>
-
     <p><%= @item.text %></p>
     <p>¥<%= @item.price %>(税込)</p>
 
-    <%= f.submit 'カートに入れる', carts_path(@item.id) %>
+
+    <%= form_for(@cart, url:carts_path) do |f| %>
+  	    <%= f.select :count,(1..10) %>
+    	<%= f.hidden_field :item_id, :value => @item.id %>
+        <%= f.submit "カートに入れる", class:"btn btn-info" %>
     <% end %>

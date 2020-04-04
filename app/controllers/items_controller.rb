@@ -20,12 +20,13 @@ end
 
   def show
     @item = Item.find(params[:id])
+    @cart = Cart.new
   end
 
 private
 
   def item_params
-    params.require(:item).permit(:cart_id, :name, :price, :text,)
+    params.require(:item).permit(:cart_id, :name, :price, :text, :item_id, :count)
   end
 
 end
