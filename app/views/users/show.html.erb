@@ -6,17 +6,10 @@
 
 	<h2>マイページ</h2>
 
-  
+  <h3>登録情報</h3>
+  <p><%= link_to "編集する", edit_user_path(@user), class: "btn btn-block btn-default glyphicon" %></p>
+  <%= link_to "パスワード再設定", new_user_password_path(@user), class: "btn btn-block btn-default glyphicon" %>
 
-<p>
-    <label>
-        登録情報<%= link_to "編集する", edit_user_path(@user), class: "btn btn-info" %>
-				<%= link_to "パスワードを変更する", new_user_registration_path, class: "btn btn-info" %>
-    </label>
-  </p>
-	
-
-  
 	<table class="table table-hover table-inverse">
 		<tbody>
 			<tr>
@@ -49,6 +42,7 @@
       	<td>メールアドレス</td>
       	<td><%= @user.email %></td>
       </tr>
+
 		</tbody>
 	</table>
 
