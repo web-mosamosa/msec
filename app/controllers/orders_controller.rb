@@ -13,14 +13,15 @@ class OrdersController < ApplicationController
 
 
     def confirm
-    	if params[:address_select] == "1"
+        @cart = Cart.where(user_id: current_user.id)
+    	if params[:select] == "1"
             @order = Order.new
             @order.postcode = current_user.postcode
             @order.address = current_user.address
             @order.order_name = current_user.last_name
             @order.pay = params[:order][:pay].to_i
 
-        elsif params[:address_select] == "2"
+        elsif params[:select] == "2"
             @residence = Residence.find(params[:order][:residence_id])
             @order = Order.new
             @order.postcode = @residence.postcode

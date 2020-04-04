@@ -10,7 +10,7 @@
     </label>
     <h2>お届け先</h2>
     <label>
-    <%= radio_button_tag "address_select", "1" %>ご自身の住所
+    <%= radio_button_tag "select", "1" %>ご自身の住所
     </label>
     <div>
     	<%= current_user.postcode %>
@@ -19,14 +19,14 @@
     </div>
 
     <label>
-    <%= radio_button_tag "address_select", "2" %>登録済住所から選択
+    <%= radio_button_tag "select", "2" %>登録済住所から選択
     </label>
     <label>
     	<%= f.collection_select :residence_id, Residence.where(user_id:current_user.id),:id,:postcode_and_address_and_name %>
     </label><br>
 
     <label>
-    <%= radio_button_tag "address_select", "3" %>新しいお届け先
+    <%= radio_button_tag "select", "3" %>新しいお届け先
     </label>
 
     <div>
