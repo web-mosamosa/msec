@@ -8,6 +8,12 @@ class User < ApplicationRecord
   has_many :residences,dependent: :destroy
   has_many :orders, dependent: :destroy
 
+  enum user_status: {
+    有効: 0,
+    退会済み: 1,
+  }
+
+  
 end
 
 
