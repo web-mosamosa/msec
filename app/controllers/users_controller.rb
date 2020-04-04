@@ -14,11 +14,15 @@ class UsersController < ApplicationController
   end
 
   def update
-	@user = User.find(params[:id])
-
-	@user.update(user_params)
-  	redirect_to user_path(@user.id)
-  end
+	 @user = User.find(params[:id])
+   @user.update(user_params)
+   @user.save
+      if @user_status == "uraura_withdraw"
+           redirect_to user_path(@user.id)
+      else 
+           redirect_to root_path   
+      end
+ end
 
  
   private
