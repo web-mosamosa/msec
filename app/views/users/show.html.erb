@@ -8,7 +8,7 @@
 
   <h3>登録情報</h3>
   <p><%= link_to "編集する", edit_user_path(@user), class: "btn btn-block btn-default glyphicon" %></p>
-  <%= link_to "パスワード再設定", new_user_password_path(@user), class: "btn btn-block btn-default glyphicon" %>
+  <%= link_to "パスワード再設定", passwordchange_path(@user), class: "btn btn-block btn-default glyphicon" %>
 
 	<table class="table table-hover table-inverse">
 		<tbody>
@@ -58,7 +58,9 @@
 
 <p>
     <label>
+
         注文履歴
+
     </label>
 </p>
 	
