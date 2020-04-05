@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   def index
     @carts = Cart.all 
     @cart = Cart.where(user_id: current_user.id)
-   
+  
   end
 
   def create
