@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
 <h1>ショッピングカート</h1>
 <table class="table">
       <thead>
@@ -25,10 +28,16 @@
                         </td>
                         
                         <td>¥<%= Cart.total_price %></td>
-                        <td><%= link_to "削除する", cart_path(cart.id), method: :delete %></td>
+                        <td><%= link_to "削除する", destroy_item_path, :id => cart.item_id, method: :delete  %></td>
                       </tr>
                     <% end %>
                   </tbody>
 </table>
+
+
+					
+					<%= link_to "カートを空にする",destroy_all_carts_path(user_id: current_user.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
+				
+				
 
 

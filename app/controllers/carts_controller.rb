@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   def index
     @carts = Cart.all 
     @cart = Cart.where(user_id: current_user.id)
+    
    
   end
 
@@ -34,10 +35,9 @@ class CartsController < ApplicationController
       redirect_to carts_path
   end
 
-  def destroy
-    @cart = Cart.find(params[:id]) #データ(レコード)を1件取得
-    cart.destroy
-    redirect_to cart_path
+  def destroy_item
+    cart.item.destroy
+    redirect_to carts_path
   end
 
   def update
@@ -53,13 +53,18 @@ class CartsController < ApplicationController
   
 
   def destroy_all
+    @user = current_user
+    @user.carts.destroy_all
+    
+      flash[:notice] = "You have  delete carts successfully."
+      redirect_to carts_path
   end
   
  
   private
 
   def cart_params
-    params.require(:cart).permit(:count, :item_id)
+    params.require(:cart).permit(:count, :item_id, :user_id)
   end 
     
 end
