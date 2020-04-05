@@ -40,15 +40,15 @@ class OrdersController < ApplicationController
     	@order.save
 
         current_user.carts.each do |cart|
-        @order_item = OrderItem.new
-        @order_item.item_id = cart.item_id
-        @order_item.price = cart.item.price * 1.1
-        @order_item.order_count = cart.count
-        @order_item.order_id = @order.id
-        @order_item.save
+        @order_items = OrderItem.new
+        @order_items.item_id = cart.item_id
+        @order_items.price = cart.item.price * 1.1
+        @order_items.count = cart.count
+        @order_items.orders_id = @order.id
+        @order_items.save
         end
         current_user.carts.destroy_all
-        redirect_to users_homes_thanks_path
+        redirect_to homes_thanks_path
    end
 
     
