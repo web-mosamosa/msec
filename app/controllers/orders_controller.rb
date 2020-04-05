@@ -13,31 +13,24 @@ class OrdersController < ApplicationController
 
 
     def confirm
-        @cart = Cart.where(user_id: current_user.id)
+        @cart = current_user.carts
+        @order = Order.new(order_params)
+        @order.pay = params[:order][:pay]
+        @total_amount = params[:order][:total_amount]
     	if params[:select] == "1"
-            @order = Order.new
             @order.postcode = current_user.postcode
             @order.address = current_user.address
             @order.order_name = current_user.last_name
-            @order.pay = params[:order][:pay].to_i
 
         elsif params[:select] == "2"
             @residence = Residence.find(params[:order][:residence_id])
-            @order = Order.new
             @order.postcode = @residence.postcode
             @order.address = @residence.address
             @order.order_name = @residence.name
-            @order.pay = params[:order][:pay].to_i
         else
             postcode = params[:order][:postcode]
             address = params[:order][:address]
             order_name = params[:order][:order_name]
-            #@order.pay = params[:order][:pay].to_i ここだけエラーする
-            if  postcode == "" || address == "" || order_name == ""
-            redirect_to new_order_path
-            else
-            @order = Order.new(order_params)
-            end
         end
     end
 
@@ -47,15 +40,15 @@ class OrdersController < ApplicationController
     	@order.save
 
         current_user.carts.each do |cart|
-        @order_item = OrderItem.new
-        @order_item.item_id = cart.item_id
-        @order_item.price = cart.item.price * 1.1
-        @order_item.order_count = cart.count
-        @order_item.order_id = @order.id
-        @order_item.save
+        @order_items = OrderItem.new
+        @order_items.item_id = cart.item_id
+        @order_items.price = cart.item.price * 1.1
+        @order_items.count = cart.count
+        @order_items.orders_id = @order.id
+        @order_items.save
         end
         current_user.carts.destroy_all
-        redirect_to users_homes_thanks_path
+        redirect_to homes_thanks_path
    end
 
     
