@@ -25,6 +25,8 @@ end
    resources :users
    resources :items
    resources :categories
+   resources :orders,only: [:index, :show, :update]
+   resources :order_items,only: [:update]
    get '/top' => 'items#top'
   end
 

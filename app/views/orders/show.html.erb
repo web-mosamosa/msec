@@ -1,2 +1,72 @@
 <%= render 'users/ura_header' %>
-<% "注文履歴詳細" %>
+<div class="container">
+  <div class="row">
+  	<div class="col-xs-7">
+  	  <p>注文情報</p>
+  	  <table class="table table-bordered">
+	    <tbody>
+	  	  <tr >
+	  	    <td>注文日</td>
+	  	    <td><%= @order.created_at %></td>
+
+	  	  </tr>
+	  	  <tr>
+	  	    <td>配送先</td>
+	  	    <td>
+            <%= @order.postcode %>
+            <%= @order.address %>
+            <%= @order.order_name %>
+            </td>
+	  	  </tr>
+	  	  <tr>
+	  	    <td >支払い方法</td>
+	  	    <td><%= @order.pay %></td>
+	  	  </tr>
+	  	  <tr>
+	  	    <td>ステータス</td>
+	  	    <td><%= @order.order_status %></td>
+	  	  </tr>
+	  	</tbody>
+  	  </table>
+  	</div>
+	<div class="col-xs-3">
+	  <p>請求情報</p>
+  	  <table class="table table-bordered">
+        <tbody>
+  	      <tr>
+  	        <td>商品合計</td>
+  	        <td><%= @order.total_amount %>円</td>
+  	      </tr>
+  	      <tr>
+  	        <td>配送料</td>
+  	        <td><%= 800 %>円</td>
+  	      </tr>
+  	      <tr>
+  	        <td>ご請求額</td>
+  	        <td><%= @order.total_amount + 800 %>円</td>
+  	      </tr>
+  	    </tbody>
+  	  </table>
+	</div>
+  </div>
+      <p>注文内容</p>
+      <table class="table table-bordered">
+        <thead>
+        	<tr>
+        	  <th>商品</th>
+        	  <th>単価（税込）</th>
+        	  <th>個数</th>
+        	  <th>小計</th>
+        	</tr>
+        </thead>
+        <tbody>
+          <% @order_item.each do |o| %>
+         <tr>
+         	<td><%= o.item.name %></td>
+         	<td><%= o.price %>円</td>
+         	<td><%= o.count %>個</td>
+          <td><%= o.price.to_i * o.count %>円</td>
+         </tr>
+         <% end %>
+        </tbody>
+      </table>

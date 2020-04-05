@@ -1,7 +1,7 @@
 <%= render 'users/ura_header' %>
 <h2>注文情報確認</h2>
 
-<table class="table">
+<table  class="table table-bordered">
       <thead>
         <tr>
             <th>商品名</th>
@@ -46,6 +46,7 @@
 <%= f.hidden_field :postcode, :value => @order.postcode %><%= @order.postcode %><br>
 <%= f.hidden_field :address, :value => @order.address %><%= @order.address %><br>
 <%= f.hidden_field :order_name, :value => @order.order_name %><%= @order.order_name %><br>
-<%= f.hidden_field :total_amount, :value => Cart.total_price + 800 %><%= @order.total_amount %><br>
+<%= f.hidden_field :total_amount, :value => Cart.total_price %><%= @order.total_amount %><br>
+<%= f.hidden_field :order_status, :value => "入金待ち" %>
 <%= f.submit "購入を確定する" %><br>
 <% end %>
