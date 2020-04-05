@@ -20,7 +20,7 @@
                         <td><%= cart.item.price %></td>
                         <%= form_for(cart, url:cart_path(cart),method: :patch) do |f| %>
                         
-                        <td><%= cart.count.to_i %></td>  
+                        <td><%= cart.count %></td>
                         <td> 
                             <%= f.select :count,(1..50) %>
                             <%= f.submit "変更する"%>
