@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def withdraw
     @user = User.find(params[:id])
-  end
+ end
 
   def residence
     @residence = Residence.new
@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     @residences = @user.residences
 
   end
-
   def show
   	@user = User.find(params[:id])
   end
+
 
   def edit
 	@user = User.find(params[:id])
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
  
   private
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :postcode, :residence, :phone_number, :email, :user_status)
+  	params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :postcode, :residence, :phone_number, :email, :user_status,:password,:password_confirmation)
   end
 end
 
