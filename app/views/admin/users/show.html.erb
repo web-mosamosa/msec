@@ -8,4 +8,4 @@
 <p>電話番号    <%= @user.phone_number%></p>
 <p>メールアドレス  <%= @user.email%></p>
 <td><%= link_to '編集する', edit_admin_user_path(@user) %></td>
-<td><%= link_to '注文履歴一覧を見る', admin_users_path %></td>
+<td><%= link_to '注文履歴一覧を見る', user_orders_path(@user) %></td>

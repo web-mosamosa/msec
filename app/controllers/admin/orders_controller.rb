@@ -2,6 +2,10 @@ class Admin::OrdersController < ApplicationController
 	def index
 		@orders = Order.all
 	end
+	def userindex
+		@user = User.find(params[:id])
+		@orders =@user.orders
+	end
 
 	def show
 		@order = Order.find(params[:id])
