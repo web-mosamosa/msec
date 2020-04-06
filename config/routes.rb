@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   resources :categories
 
 
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'   
+  } 
 
   resources :users, only: [:edit,:show,:create,:update,:destroy]
   get 'users/:id/residences' => 'users#residence', as: 'user_residence'

@@ -5,25 +5,30 @@
             <th>商品名</th>
             <th>単価（税込）</th>
             <th>数量</th>
+            <th></th>
             <th>小計</th>
         </tr>
 
-	    </thead>
+      </thead>
                   <tbody>
-                    <% @cart.each do |cart| %>
+                    <% @carts.each do |cart| %>
                       <tr>
                         <td><%= cart.item.name %></td>
                         <td><%= cart.item.price %></td>
-                        <td><%= form_for(cart, url:cart_path(cart),method: :patch) do |f| %>
-                            <% cart.count %>
-                            <%= f.select :count,(1..10) %>
+                        <%= form_for(cart, url:cart_path(cart),method: :patch) do |f| %>
+                        
+                        <td><%= cart.count %></td>
+                        <td> 
+                            <%= f.select :count,(1..50) %>
                             <%= f.submit "変更する"%>
                             <% end %>
                         </td>
-                        <td>¥<% cart.item.price * cart.count %></td>
+                        
+                        <td>¥<%= Cart.total_price %></td>
                         <td><%= link_to "削除する", cart_path(cart.id), method: :delete %></td>
                       </tr>
                     <% end %>
                   </tbody>
 </table>
+
 

@@ -9,9 +9,14 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   enum user_status: {
-    有効: 0,
-    退会済み: 1,
+    有効: "uraura_withdraw",
+    退会済み: "ura_withdraw",
   }
+
+  #def active_for_authentication?  
+   # super && !deleted_at
+  #end  
+
 
   
 end

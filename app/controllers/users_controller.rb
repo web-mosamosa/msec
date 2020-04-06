@@ -4,7 +4,12 @@ class UsersController < ApplicationController
 
   def withdraw
     @user = User.find(params[:id])
+<<<<<<< HEAD
  end
+=======
+  end
+
+>>>>>>> 064c55c3555e3e0477cf29252aadb1c3238d49de
   def residence
     @residence = Residence.new
     @user = User.find(params[:id])
@@ -21,11 +26,15 @@ class UsersController < ApplicationController
   end
 
   def update
-	@user = User.find(params[:id])
-
-	@user.update(user_params)
-  	redirect_to user_path(@user.id)
-  end
+	 @user = User.find(params[:id])
+   @user.update(user_params)
+   @user.save
+      if @user_status == "uraura_withdraw"
+           redirect_to user_path(@user.id)
+      else 
+           redirect_to root_path   
+      end
+ end
 
  
   private
