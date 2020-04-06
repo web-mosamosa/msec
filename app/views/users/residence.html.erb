@@ -1,14 +1,15 @@
+<%= render 'users/ura_header' %>
+<div class="container">
 <h2>配送先登録/一覧</h2>
-
 <%= render 'residences/new', residence: @residence %>
-
 <% @residences.each do |residence| %>
-<table>
+<table class="table table-bordered">
 	<thead>
 		<tr>
 			<th>郵便番号</th>
 			<th>住所</th>
 			<th>宛名</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -22,3 +23,4 @@
 	</tbody>
 </table>
 <% end %>
+</div>

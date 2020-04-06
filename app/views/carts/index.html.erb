@@ -28,7 +28,7 @@
                             <% end %>
                         </td>
                         
-                        <td>¥<%= Cart.total_price %></td>
+                        <td>¥<%= cart.item.price * cart.count %></td>
                         
                         <td><%= link_to "削除する", destroy_item_path(:item => cart.item_id), method: :delete  %></td>
                     
