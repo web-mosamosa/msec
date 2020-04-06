@@ -17,6 +17,9 @@ class Admin::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update(order_params)
     @order.save
+    if @order.order_status == "入金確認"
+    	@order.order_items.update(make_status:"制作待ち")
+    end
     redirect_back(fallback_location: root_path)
     end
 
