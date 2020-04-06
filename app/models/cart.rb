@@ -10,5 +10,9 @@ class Cart < ApplicationRecord
     end
     return value
   end
-
+  def self.sum_price
+    sum = 0
+    sum += Cart.total_price
+    return sum
+    end
 end
