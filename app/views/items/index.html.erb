@@ -1,14 +1,48 @@
 
 <%= render 'users/ura_header' %>
-<h2>商品一覧（全<%= @items.count %>件）</h2>
-<table class="table table-hover table-inverse">
+<div class="container">
+<div class="border" style="container">
+	<div class="row">
+		<div class="col-xs-2">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>
+										<h5>ジャンル検索</h5>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @categories.each do |category| %>
+								<tr>
+								<%if category.status == '有効'%>
+									<th><%= link_to category.name, category_path(category)%></th>
+								<% end %>
+								</tr>
 
-            <tbody>
+								<% end %>
+							</tbody>
+						</table>
+		</div>
+		<div class="col-xs-10">		
+				<h2>商品一覧（全<%= @items.count %>件）</h2>
+				  <div class="flex">
+						  <% @items.each do |item| %>
+							<div>
+							  
+											<%= attachment_image_tag(@item, :profile_image, :fill, 300,
+											30, format: 'jpeg', fallback: "no_image.jpg") %>
+												<br><%= item.name %>
+												<br>¥<%= item.price %>
+							</div>
+							<% end %>
+					</div>
+		</div>		
+	</div>
+	</div>
+</div>
 
-				<% @categories.each do |category| %>
-				<%if category.status == '有効'%>
-					<td><%= link_to category.name, category_path(category)%></td>
-				<% end %>
+
 
 				<% end %>
 			</tbody>
@@ -30,3 +64,4 @@
 				<% end %>
 			</tbody>
 </table>
+

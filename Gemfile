@@ -71,3 +71,9 @@ gem 'jquery-rails'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+
+# bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.9.9'
