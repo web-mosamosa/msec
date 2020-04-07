@@ -111,6 +111,7 @@ GEM
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
+    jQuery-Validation-Engine-rails (0.0.2)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.3.5)
@@ -281,6 +282,7 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  jQuery-Validation-Engine-rails
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener_web (~> 1.0)
