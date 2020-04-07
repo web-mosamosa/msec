@@ -1,5 +1,7 @@
 class Admin::ItemsController < ApplicationController
   def top
+    range = Date.today.beginning_of_day..Date.today.end_of_day
+    @orders = Order.where(created_at: range)
   end
 
   def index
@@ -40,7 +42,7 @@ class Admin::ItemsController < ApplicationController
 private
 
   def item_params
-    params.require(:item).permit(:name, :text, :price, :sell_status, :category_id, :profile_image)
+    params.require(:item).permit(:name, :text, :price, :sell_status, :category_id, :profile_image, :range)
   end
 
 

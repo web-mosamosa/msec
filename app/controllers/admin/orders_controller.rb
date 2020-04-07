@@ -1,6 +1,12 @@
 class Admin::OrdersController < ApplicationController
 	def index
-		@orders = Order.all
+		@range = params[:range].to_i
+		if @range == 1
+			range = Date.today.beginning_of_day..Date.today.end_of_day
+           @orders = Order.where(created_at: range)
+       else
+       	@orders = Order.all
+       end
 	end
 	def userindex
 		@user = User.find(params[:id])
