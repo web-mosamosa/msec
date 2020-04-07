@@ -1,7 +1,9 @@
 <%= render 'users/ura_header' %>
-<h2>注文情報確認</h2>
-
-<table class="table">
+<div class="container">
+  <div class="row">
+    <h2>注文情報確認</h2>
+    <div class="col-xs-7">
+<table  class="table table-bordered">
       <thead>
         <tr>
             <th>商品名</th>
@@ -22,8 +24,9 @@
                     <% end %>
                   </tbody>
 </table>
-
-<table>
+</div>
+<div class="col-xs-3">
+<table class="table table-bordered">
 		    	<tr>
 		    		<th>送料</th>
 		    		<td><%= 800 %></td>
@@ -37,15 +40,17 @@
 		    		<td><%= Cart.total_price + 800 %></td>
 		    	</tr>
 </table>
-
+</div>
+</div>
 <%= form_for(@order,url:orders_path,method: :post) do |f| %>
 <h3>支払方法</h3>
-<%= f.hidden_field :pay, :value => @order.pay %>
-<%= @order.pay %>
+<%= f.hidden_field :pay, :value => @order.pay %><%= @order.pay %>
 <h3>お届け先</h3>
 <%= f.hidden_field :postcode, :value => @order.postcode %><%= @order.postcode %><br>
 <%= f.hidden_field :address, :value => @order.address %><%= @order.address %><br>
 <%= f.hidden_field :order_name, :value => @order.order_name %><%= @order.order_name %><br>
-<%= f.hidden_field :total_amount, :value => Cart.total_price + 800 %><%= @order.total_amount %><br>
-<%= f.submit "購入を確定する" %><br>
+<%= f.hidden_field :total_amount, :value => Cart.total_price %><%= @order.total_amount %><br>
+<%= f.hidden_field :order_status, :value => "入金待ち" %>
+<%= f.submit "購入を確定する",class:"btn btn-info" %><br>
 <% end %>
+</div>

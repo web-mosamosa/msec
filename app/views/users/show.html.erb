@@ -52,14 +52,16 @@
 
 <p>
     <label>
-        配送先<%= link_to "配送先一覧", residences_path(@user), class: "btn btn-info" %>
+
+        配送先<%= link_to "配送先一覧", user_residence_path(@user), class: "btn btn-info" %>
+
     </label>
 </p>
 
 <p>
     <label>
 
-        注文履歴
+        注文履歴<%= link_to "注文履歴一覧", orders_path, class: "btn btn-info" %>
 
     </label>
 </p>

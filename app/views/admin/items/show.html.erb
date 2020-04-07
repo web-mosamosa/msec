@@ -1,9 +1,11 @@
 <%= render 'admin/admin_header' %>
+<div class="col-md-8 col-md-offset-2">
 <h2>商品 詳細画面</h2>
 	<p>商品<%= @item.name %></p>
     <p>商品説明<%= @item.text %></p>
     <p>ジャンル<%= @item.category.name %></p>
-    <p>税込価格（税抜価格）<%= @item.price %>(@item_price)円</p>
+    <p>税込価格（税抜価格）<%= @item.price %>(<%= @item.price %>)円</p>
     <p>販売ステータス<%= @item.sell_status %></p>
     <%= attachment_image_tag @item, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
     <%= link_to "編集する",edit_admin_item_path(@item), class: "btn btn-primary" %>
+</div>

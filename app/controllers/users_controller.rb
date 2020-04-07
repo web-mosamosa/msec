@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 
   def withdraw
     @user = User.find(params[:id])
- end
-
+  end
   def residence
     @residence = Residence.new
     @user = User.find(params[:id])

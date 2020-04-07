@@ -4,11 +4,12 @@ class OrdersController < ApplicationController
     end
 
     def index
+        @orders = Order.where(user_id: current_user.id)
     end
 
     def show
     	@order = Order.find(params[:id])
-    	@order.user_id = current_user.id
+    	@order_item = @order.order_items
     end
 
 
@@ -20,7 +21,7 @@ class OrdersController < ApplicationController
     	if params[:select] == "1"
             @order.postcode = current_user.postcode
             @order.address = current_user.address
-            @order.order_name = current_user.last_name
+            @order.order_name = current_user.last_name + current_user.first_name
 
         elsif params[:select] == "2"
             @residence = Residence.find(params[:order][:residence_id])
@@ -44,7 +45,7 @@ class OrdersController < ApplicationController
         @order_items.item_id = cart.item_id
         @order_items.price = cart.item.price * 1.1
         @order_items.count = cart.count
-        @order_items.orders_id = @order.id
+        @order_items.order_id = @order.id
         @order_items.save
         end
         current_user.carts.destroy_all
