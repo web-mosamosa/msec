@@ -1,8 +1,66 @@
 <%= render 'users/ura_header' %>
 
 <h1><%= flash[:error] %></h1>
-<p>ようこそ、もさもさへ！<br>
-	このサイトは、ケーキ販売のECサイトになります。<br>
-	会員でない方も商品の閲覧はできますが、<br>
-    購入には会員登録が必要になります。</p>
+
+<div class="container">
+ <div class="border" style="container">
+	<div class="row">
+		<div class="col-xs-2">
+		  <div style="width: 100%; height: 750px;">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>
+										<h5>ジャンル検索</h5>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @categories.each do |category| %>
+								<tr>
+								<%if category.status == '有効'%>
+									<th><%= link_to category.name, category_path(category)%></th>
+								<% end %>
+								</tr>
+
+								<% end %>
+							</tbody>
+						</table>
+				</div>
+		</div>
+		
+	 <div class="col-xs-10">	
+	   <div>
+		  <div style="display: flex; align-items: center;  width: 100%; height: 150px; padding: 130px;">
+
+			 
+    
+    
+    
+    
+
+		  <h4>ようこそ、もさもさへ！<br>
+			このサイトは、ケーキ販売のECサイトになります。<br>
+			会員でない方も商品の閲覧はできますが、<br>
+				購入には会員登録が必要になります。</h4>
+				</div>
+		 </div>
+
+	 <h2>オススメ商品（全<%= @items.count %>件）</h2>
+				  <div class="flex">
+			        <% @items.each do |item| %>
+					<div>
+						<%= link_to attachment_image_tag(item, :profile_image, :fill, 80,
+											80, format: 'jpeg', fallback: "no_image.jpg"), item_path(item) %>
+						<br><%= item.name %>
+						<br>¥<%= item.price %>
+					</div>
+					<% end %>
+					</div>
+		  </div>
+		</div>
+	</div>
+	</div>
+</div>
+
 

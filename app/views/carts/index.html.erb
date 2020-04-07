@@ -18,7 +18,7 @@
                     <% @carts.each do |cart| %>
                       <tr>
                         <td><%= cart.item.name %></td>
-                        <td><%= cart.item.price %></td>
+                        <td><%=((cart.item.price.to_i * 1.1).round(2)).ceil.to_i  %></td>
                         <%= form_for(cart, url:cart_path(cart),method: :patch) do |f| %>
                         
                         <td><%= cart.count.to_i %></td>  
@@ -28,7 +28,11 @@
                             <% end %>
                         </td>
                         
-                        <td>¥<%= cart.item.price.to_i * cart.count.to_i %></td>
+
+                        
+
+                        <td>¥<%= ((cart.item.price.to_i * 1.1).round(2)).ceil.to_i  * cart.count.to_i %></td>
+
                         
                         <td><%= link_to "削除する", destroy_item_path(:item => cart.item_id), method: :delete  %></td>
                     
@@ -47,6 +51,6 @@
           <%= link_to "情報入力に進む", new_order_path,class: "btn-sm btn-danger" %>
           <% end %>
           
-          <%= link_to "買い物を続ける", items_path,class: "btn-sm btn-danger" %>
+          <%= link_to "買い物を続ける", root_path,class: "btn-sm btn-danger" %>
 
 合計金額 ¥<%= Cart.sum_price %>
