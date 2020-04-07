@@ -32,6 +32,9 @@ class OrdersController < ApplicationController
             postcode = params[:order][:postcode]
             address = params[:order][:address]
             order_name = params[:order][:order_name]
+            if postcode =="" || address == "" || order_name == ""
+                redirect_back(fallback_location: new_order_path)
+            end
         end
     end
 
