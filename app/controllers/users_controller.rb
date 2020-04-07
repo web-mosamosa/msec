@@ -27,14 +27,14 @@ class UsersController < ApplicationController
       if @user_status == "uraura_withdraw"
            redirect_to user_path(@user.id)
       else 
-           redirect_to root_path   
+           redirect_to destroy_user_session_path
       end
  end
 
  
   private
   def user_params
-  	params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :postcode, :residence, :phone_number, :email, :user_status,:password,:password_confirmation)
+  	params.require(:user).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :postcode, :address, :phone_number, :email, :user_status,:password,:password_confirmation)
   end
 end
 

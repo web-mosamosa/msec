@@ -10,7 +10,7 @@
 				<span class="icon-bar"></span>
         <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="/">
 				<h1>もさもさ＠</h1>
 			</a>
 		</div>
@@ -23,7 +23,7 @@
             <li><a href="#"><%= link_to ' マイページ', user_path(current_user), class: 'glyphicon glyphicon-home home' %></a></li>
             <li><a href="#"><%= link_to ' 商品一覧', items_path, class: 'glyphicon glyphicon-user users' %></a></li>
             <li><a href="#"><%= link_to ' カート', carts_path, class: 'glyphicon glyphicon-book books' %></a></li>
-            <li><a href="#"><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></a></li>
+            <li><a href="#"><%= link_to ' ログアウト', destroy_user_session_path, class: 'glyphicon glyphicon-log-out logout' %></a></li>
             <% else %>
             
             <li><a href="#"><%= link_to ' 商品一覧', items_path, class: 'glyphicon glyphicon-user users' %></a></li>

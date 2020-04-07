@@ -15,7 +15,7 @@
             <li><%= link_to ' マイページ', user_path(current_user), class: 'glyphicon glyphicon-home home' %></li>
             <li><%= link_to ' 商品一覧', items_path, class: 'glyphicon glyphicon-user users' %></li>
             <li><%= link_to ' カート', carts_path, class: 'glyphicon glyphicon-book books' %></li>
-            <li><%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
+            <li><%= link_to ' ログアウト', destroy_user_session_path, class: 'glyphicon glyphicon-log-out logout' %></li>
             <% else %>
             
             <li><%= link_to ' 商品一覧', items_path, class: 'glyphicon glyphicon-user users' %></li>
