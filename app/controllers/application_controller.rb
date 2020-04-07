@@ -9,27 +9,27 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = @cart.id
     end
   end
-  def after_sign_in_path_for(resource)
+
+protected
+
+def after_sign_in_path_for(resource)
   case resource
   when User
-    user_path(resource)
+    root_path
   when Admin
     admin_top_path
   end
 end
 
-protected
-  def after_sign_in_path_for(resource)
+  def after_sign_up_path_for(resource)
     root_path
   end
 
-  def after_sign_up_path_for(resource)
-    root_path
-  end 
-
   #sign_out後のredirect先変更する。rootパスへ。rootパスはhome topを設定済み。
   def after_sign_out_path_for(resource)
-    root_path
+    if Admin
+      new_admin_session_path
+    end
   end
 
 
