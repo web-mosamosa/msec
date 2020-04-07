@@ -9,17 +9,22 @@ Rails.application.routes.draw do
   resources :categories
 
 
-  devise_for :users, :controllers => {
+  devise_for :users, skip: [:sessions],
+  :controllers => {
     :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
   } 
+   devise_scope :user do
+    get 'users/sign_in' => 'users/sessions#new', as: 'new_user_session'
+    post 'users/sign_in' => 'users/sessions#create', as: 'user_session'
+    get '/sign_out' => 'devise/sessions#destroy', as: 'destroy_user_session'
+  end
 
   resources :users, only: [:edit,:show,:create,:update,:destroy]
   get 'users/:id/residences' => 'users#residence', as: 'user_residence'
   post 'users/:id/residences' => 'residences#create'
   devise_scope :user do
   get 'users/:id/password' => 'users/registrations#edit', as: 'passwordchange'
-
+get 'users/:id/withdraw' => 'users#withdraw', as: 'withdraw'
 end
   namespace  :admin do
    resources :users
