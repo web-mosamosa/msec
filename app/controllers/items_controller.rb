@@ -33,6 +33,7 @@ end
 
   def show
     @item = Item.find(params[:id])
+     @tax_price = ((@item.price.to_i * 1.1).round(2)).ceil.to_i
     @cart = Cart.new
     
     @categories = Category.all

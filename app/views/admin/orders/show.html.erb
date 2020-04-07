@@ -37,9 +37,9 @@
           <% @order_item.each do |o| %>
          <tr>
          	<td><%= o.item.name %></td>
-         	<td><%= o.price %>円</td>
+         	<td><%= ((o.price.to_i * 1.1).round(2)).ceil.to_i %>円</td>
          	<td><%= o.count %>個</td>
-          <td><%= o.price.to_i * o.count %>円</td>
+          <td><%= ((o.price.to_i * 1.1).round(2)).ceil.to_i  * o.count.to_i %>円</td>
           <td><%= form_with(model: o, local: true, url: admin_order_item_path(o.id), method: :patch) do |f| %>
           <%= f.select :make_status, [["着手不可", "着手不可"], ["制作待ち", "制作待ち"], ["制作中", "制作中"], ["制作完了", "制作完了"]] %><br>
 	      <%= f.submit "更新", class: "btn btn-info"%></td>
