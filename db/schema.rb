@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_131914) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "item_id"
-    t.integer "order_id"
+    t.integer "orders_id"
     t.integer "count"
     t.string "price"
     t.datetime "created_at", null: false
@@ -69,20 +69,17 @@ ActiveRecord::Schema.define(version: 2020_04_05_131914) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
     t.string "pay"
-    t.string "address"
-    t.integer "postcode"
-    t.string "order_name"
+    t.string "send_address"
+    t.integer "send_postcade"
+    t.string "send_name"
     t.string "order_status"
     t.string "carriage"
-    t.integer "total_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "residences", force: :cascade do |t|
-    t.integer "user_id"
     t.string "postcode"
     t.string "address"
     t.string "name"
@@ -101,6 +98,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_131914) do
     t.string "first_name_kana"
     t.string "last_name_kana"
     t.string "postcode"
+    t.string "residence"
     t.integer "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
