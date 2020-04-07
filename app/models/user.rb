@@ -17,6 +17,13 @@ class User < ApplicationRecord
    # super && !deleted_at
   #end  
 
+  validates :first_name, :last_name,  presence: true
+  validates :password, presence: true, length: { minimum: 7 }
+  validates :email, presence: true
+  validates :first_name_kana, :last_name_kana, presence: true
+  validates :postcode, length: {minimum: 7, maximum: 7 }
+  validates :phone_number, length: {minimum: 10, maximum: 11 }
+  validates :password, length: {minimum: 6 }
 
   
 end

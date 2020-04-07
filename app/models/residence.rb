@@ -8,5 +8,5 @@ class Residence < ApplicationRecord
 	def postcode_and_address_and_name
 		self.postcode + address + name
 	end
-
+ 
 end
