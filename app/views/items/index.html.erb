@@ -1,5 +1,4 @@
 
-
 <%= render 'users/ura_header' %>
 
 <div class="border" style="container">
@@ -31,8 +30,8 @@
 						  <% @items.each do |item| %>
 							<div>
 							  
-											<%= attachment_image_tag(item, :profile_image, :fill, 80,
-											80, format: 'jpeg', fallback: "no_image.jpg") %>
+											<%= link_to attachment_image_tag(@item, :profile_image, :fill, 300,
+											30, format: 'jpeg', fallback: "no_image.jpg"), item_path(item) %>
 												<br><%= item.name %>
 												<br>¥<%= item.price %>
 							</div>
@@ -42,11 +41,6 @@
 	</div>
 	</div>
 
-
-
-
-
 			
 			</tbody>
 </table>
-
