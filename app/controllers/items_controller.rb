@@ -16,7 +16,7 @@ def top
   
 end
 
-  def index
+def index
   	@categories = Category.all
     # urlにcategory_id(params)がある場合
     if params[:category_id]
@@ -29,7 +29,7 @@ end
       # 投稿すべてを取得
       @items = Item.order(created_at: :desc).all
     end
-  end
+end
 
   def show
     @item = Item.find(params[:id])
@@ -49,7 +49,7 @@ end
     end
   end
 
-private
+ private
 
   def item_params
     params.require(:item).permit(:cart_id, :name, :price, :text, :item_id, :count)
