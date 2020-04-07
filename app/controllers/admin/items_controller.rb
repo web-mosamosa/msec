@@ -11,6 +11,7 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @tax_price = ((@item.price.to_i * 1.1).round(2)).ceil.to_i
   end
 
   def new

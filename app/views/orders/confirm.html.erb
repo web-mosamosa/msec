@@ -17,9 +17,9 @@
                     <% @cart.each do |cart| %>
                       <tr>
                         <td><%= cart.item.name %></td>
-                        <td><%= cart.item.price %></td>
+                        <td><%= ((cart.item.price.to_i * 1.1).round(2)).ceil.to_i  %></td>
                         <td><%= cart.count %></td>
-                        <td>¥<%= Cart.total_price %></td>
+                        <td>¥<%= ((cart.item.price.to_i * 1.1).round(2)).ceil.to_i  * cart.count.to_i %></td>
                       </tr>
                     <% end %>
                   </tbody>

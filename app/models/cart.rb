@@ -6,7 +6,7 @@ class Cart < ApplicationRecord
     carts = Cart.all
     value = 0
     carts.each do |c|
-      value += c.item.price.to_i * c.count.to_i
+      value += ((c.item.price.to_i * 1.1).round(2)).ceil.to_i.to_i * c.count.to_i
     end
     return value
   end
